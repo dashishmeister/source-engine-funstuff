@@ -1,3 +1,4 @@
+//stolen from dr_hawk_tuah
 //you can use lightmapped reflective with a normal texture, this will disable any sort of texture projection
 //(i.e. it will stay flat and not move no matter how you look at it)
 //try disabling clamp s and clamp t to have your texture tile
