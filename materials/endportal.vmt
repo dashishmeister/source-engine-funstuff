@@ -1,0 +1,14 @@
+//you can use lightmapped reflective with a normal texture, this will disable any sort of texture projection
+//(i.e. it will stay flat and not move no matter how you look at it)
+//try disabling clamp s and clamp t to have your texture tile
+//replace "MyCoolTexture" with whatever you want
+
+"LightmappedReflective"
+{
+	"%tooltexture" "MyCoolTexture" //used for hammer preview
+	"$reflecttexture" "MyCoolTexture"
+	"$surfaceprop" "default_silent"
+	"$nodecal" "1"
+}
+
+//todo: check if you need func_reflective glass
