@@ -53,3 +53,5 @@ float used for holographic stuff in csgo
 
 maybe theres some kind of mask material that exists to only enble holo on certain areas of a model but can't find docs or source code
 ??????
+
+MATERIAL_VAR_AOPREPASS???
