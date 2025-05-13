@@ -24,11 +24,37 @@ s_pShaderShadow->DepthFunc( SHADER_DEPTHFUNC_NEARER );
 ```
 
 ## $envmapcameraspace
-what does it do? it's between god and gaben now
+```glsl
+		if( $envmapcameraspace )
+		{
+			&AllocateRegister( \$reflectionVector );
+			&ComputeReflectionVector( $worldPos, $worldNormal, $reflectionVector );
 
-can't use it at the same time as envmapsphere
+			; transform reflection vector into view space
+			dp3 oT1.x, $reflectionVector, $cViewModel0
+			dp3 oT1.y, $reflectionVector, $cViewModel1
+			dp3 oT1.z, $reflectionVector, $cViewModel2
 
-obsolete, removed from csgo
+			&FreeRegister( \$reflectionVector );
+		}
+		elsif( $envmapsphere )
+		{
+			&AllocateRegister( \$reflectionVector );
+			&ComputeReflectionVector( $worldPos, $worldNormal, $reflectionVector );
+			&ComputeSphereMapTexCoords( $reflectionVector, "oT1" );
+
+			&FreeRegister( \$reflectionVector );
+		}
+		else
+		{
+			&ComputeReflectionVector( $worldPos, $worldNormal, "oT1" );
+		}
+```
+no idea what would be the difference, todo check in game
+
+"elsif" isnt valid syntax in glsl, but no idea if that matters with valve and their *perl* based workflow
+
+removed as of csgo
 
 noalphamod also gone as of csgo
 
