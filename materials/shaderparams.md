@@ -58,6 +58,12 @@ removed as of csgo
 
 noalphamod also gone as of csgo
 
+## $envmapsphere broken: lead?
+
+ENVMAP pre dx9
+info.m_nEnvmap dx9
+internal directx nonsense? or engine stuff
+
 ## $envmapmode
 what does it do? it's between god and gaben now
 
